@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../resource/ClinaMexCSS.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.stevenlopez.controller.MenuPrincipalController">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="648.0" opacity="0.65" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/fondo.jpeg" />
+         </image>
+      </ImageView>
+      <MenuBar stylesheets="@../resource/ClinaMexCSS.css">
+        <menus>
+          <Menu mnemonicParsing="false" text="Modulos">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#cerrar" styleClass="menu-bar" text="Close" />
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaPacientes" styleClass="menu-bar" text="Pacientes" />
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaEspecialidad" styleClass="menu-bar" text="Especialidades" />
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaMedicamento" styleClass="menu-bar" text="Medicamentos" />
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaDoctor" styleClass="menu-bar" text="Doctores" />
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaReceta" styleClass="menu-bar" text="Recetas" />
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaDetalleReceta" styleClass="menu-bar" text="DetalleReceta" />
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaCita" styleClass="menu-bar" text="Citas" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Reportes">
+            <items>
+              <MenuItem mnemonicParsing="false" styleClass="menu-bar" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="?">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#ventanaProgramador" styleClass="menu-bar" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <ImageView fitHeight="308.0" fitWidth="348.0" layoutX="146.0" layoutY="57.0" opacity="0.44" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/Logo.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="200.0" layoutY="348.0" opacity="0.64" text="ClinaMex" textAlignment="CENTER">
+         <font>
+            <Font name="Lucida Bright Regular" size="47.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteCita" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f4c2f062-6d3a-495b-90be-5274bcf9f3d3">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="48"/>
+	<parameter name="FondoReporte" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[Select
+	C.codigoCita,
+	C.fechaCita,
+	time_format (C.horaCita, '%H:%i') as Hora,
+	C.tratamiento,
+	C.descripCondActual,
+	P.nombresPaciente,
+	D.nombresDoctor
+	From Citas C
+		INNER JOIN Pacientes as P ON C.codigoPaciente = P.codigoPaciente
+			INNER JOIN Doctores AS D ON C.numeroColegiado = D.numeroColegiado;]]>
+	</queryString>
+	<field name="codigoCita" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fechaCita" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Hora" class="java.lang.String"/>
+	<field name="tratamiento" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="descripCondActual" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombresPaciente" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombresDoctor" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band height="752" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="572" height="752" uuid="584d0d4a-9588-4c86-a407-967590a73b1f"/>
+				<imageExpression><![CDATA[$P{FondoReporte}]]></imageExpression>
+			</image>
+		</band>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="51" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="39" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="44" height="20" uuid="8084f3cb-04b8-4d24-9636-aaffc096a9fa"/>
+				<text><![CDATA[Codigo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="203" y="0" width="100" height="20" uuid="16394016-37bd-44b0-8110-83179ab76fd4"/>
+				<text><![CDATA[Tratamiento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="319" y="0" width="82" height="20" uuid="1a2ad297-e211-431a-9e6d-298f84584d49"/>
+				<text><![CDATA[Condicion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="134" y="0" width="53" height="20" uuid="3586cfea-fe75-476a-95b6-e6d04f4232ed"/>
+				<text><![CDATA[Hora]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="55" y="2" width="63" height="20" uuid="0b4aa8d5-d0e6-4abb-bb67-da5bef0d8f7f"/>
+				<text><![CDATA[Fecha]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="417" y="0" width="100" height="20" uuid="2eb9c3cc-c9b5-4548-9a91-c93131f97a01"/>
+				<text><![CDATA[Paciente]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="25" width="572" height="1" uuid="339ae9aa-bd76-4b23-9777-195e6d38356b"/>
+				<graphicElement>
+					<pen lineWidth="4.0" lineStyle="Double"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="39" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="44" height="20" uuid="f9f1f363-2229-4198-b36e-45179b3b84c5"/>
+				<textFieldExpression><![CDATA[$F{codigoCita}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="203" y="0" width="100" height="20" uuid="0bc3d5cf-2a6e-403f-a0ff-a70477b59235"/>
+				<textFieldExpression><![CDATA[$F{tratamiento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="319" y="0" width="82" height="20" uuid="159f435d-f462-4594-af89-60d6f99a274e"/>
+				<textFieldExpression><![CDATA[$F{descripCondActual}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="134" y="0" width="53" height="20" uuid="795a4760-8fdc-4699-a3f6-3aa03f7db915"/>
+				<textFieldExpression><![CDATA[$F{Hora}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="55" y="0" width="63" height="20" uuid="14c90509-4a88-4c72-bcfc-1257f7d798f4"/>
+				<textFieldExpression><![CDATA[$F{fechaCita}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="417" y="0" width="100" height="20" uuid="0ed23fe8-d340-4d61-a3c2-80d2d30bc1ae"/>
+				<textFieldExpression><![CDATA[$F{nombresPaciente}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="5" y="27" width="557" height="1" uuid="84a7c90c-d460-4ce3-82a2-4d34eef52296"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+</jasperReport>

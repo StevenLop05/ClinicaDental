@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.CubicCurve?>
+<?import javafx.scene.shape.Ellipse?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="422.0" prefWidth="994.0" stylesheets="@../resource/ClinaMexCSS.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.stevenlopez.controller.CitaController">
+   <children>
+      <ImageView fitHeight="420.0" fitWidth="651.0" layoutX="-51.0" opacity="0.45" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@../image/fondo.jpeg" />
+         </image>
+      </ImageView>
+      <Ellipse fill="#03b2eb" layoutX="364.0" layoutY="285.0" radiusX="262.0" radiusY="214.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+      <Pane layoutX="212.0" layoutY="-1.0" prefHeight="428.0" prefWidth="782.0" style="-fx-background-radius: 100 0 0 100; -fx-background-color: #04D9C4;">
+         <children>
+            <Pane layoutX="26.0" layoutY="19.0" prefHeight="389.0" prefWidth="742.0" style="-fx-background-color: #F2F2F2; -fx-background-radius: 50 0 0 50;">
+               <children>
+                  <GridPane fx:id="grpFechas" layoutX="24.0" layoutY="30.0" prefHeight="78.0" prefWidth="694.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="99.76309204101562" minWidth="10.0" prefWidth="81.75021362304688" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="131.24978637695312" minWidth="10.0" prefWidth="114.21072387695312" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="124.24978637695312" minWidth="10.0" prefWidth="104.2896728515625" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="119.7103271484375" minWidth="10.0" prefWidth="119.7103271484375" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="114.0" minWidth="10.0" prefWidth="78.4609375" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="139.5390625" minWidth="10.0" prefWidth="139.5390625" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="48.0" minHeight="10.0" prefHeight="48.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="31.0" minHeight="10.0" prefHeight="16.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="Tratamiento">
+                           <GridPane.margin>
+                              <Insets right="5.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label text="Condicion" GridPane.columnIndex="2">
+                           <GridPane.margin>
+                              <Insets right="5.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <TextField fx:id="txtTratamiento" editable="false" GridPane.columnIndex="1">
+                           <GridPane.margin>
+                              <Insets right="5.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <TextField fx:id="txtCondicion" editable="false" GridPane.columnIndex="3">
+                           <GridPane.margin>
+                              <Insets right="5.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <Label text="Cod. Paciente" GridPane.columnIndex="4">
+                           <GridPane.margin>
+                              <Insets right="5.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label text="Fecha Cita" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets right="5.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label text="Num. Colegiado" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets right="5.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label text="Hora Cita" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets right="5.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <ComboBox fx:id="cmbCodigoPaciente" disable="true" prefWidth="150.0" GridPane.columnIndex="5" />
+                        <ComboBox fx:id="cmbNumeroColegiado" disable="true" prefWidth="150.0" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                        <TextField fx:id="txtHoraCita" editable="false" promptText="H:mm:ss" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                     </children>
+                  </GridPane>
+                  <TableView fx:id="tblCitas" layoutX="15.0" layoutY="163.0" onKeyReleased="#seleccionarElemento" onMouseClicked="#seleccionarElemento" prefHeight="200.0" prefWidth="718.0">
+                    <columns>
+                      <TableColumn fx:id="colCodigoCita" prefWidth="62.4000244140625" text="Codigo" />
+                      <TableColumn fx:id="colTratamiento" prefWidth="131.199951171875" text="Tratamiento" />
+                        <TableColumn fx:id="colCondicion" prefWidth="135.99996948242188" text="Condicion" />
+                        <TableColumn fx:id="colFechaCita" minWidth="7.20001220703125" prefWidth="88.5" text="Fecha" />
+                        <TableColumn fx:id="colHoraCita" prefWidth="72.5" text="Hora" />
+                        <TableColumn fx:id="colCodigoPaciente" prefWidth="92.0" text="Cod. Paciente" />
+                        <TableColumn fx:id="colNumeroColegiado" prefWidth="134.0" text="Num. Colegiado" />
+                        <TableColumn minWidth="0.0" prefWidth="0.0" />
+                    </columns>
+                  </TableView>
+               </children></Pane>
+            <CubicCurve controlX1="-50.0" controlX2="49.79296875" controlY1="-100.0" controlY2="100.0" endX="150.0" fill="#f2b950" layoutX="784.0" layoutY="430.0" startX="-150.0" stroke="TRANSPARENT" />
+         </children>
+      </Pane>
+      <Circle fill="#f2cf63" layoutX="68.0" layoutY="62.0" radius="109.0" stroke="#f7f7f758" strokeType="INSIDE" />
+      <Ellipse fill="#57482df8" layoutX="68.0" layoutY="325.0" radiusX="100.0" radiusY="132.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+      <CubicCurve controlX1="-50.0" controlX2="50.0" controlY1="-100.0" controlY2="100.0" endX="150.0" fill="#f2b950" layoutX="995.0" layoutY="279.0" rotate="90.0" startX="-150.0" stroke="TRANSPARENT" />
+      <VBox layoutX="7.0" layoutY="236.0" prefHeight="133.0" prefWidth="120.0" stylesheets="@../resource/ClinaMexCSS.css">
+         <children>
+            <Button fx:id="btnNuevo" mnemonicParsing="false" onAction="#nuevo" prefWidth="122.0" styleClass="button1" stylesheets="@../NetBeansProjects/ClinaMex_2018151/src/org/stevenlopez/resource/ClinaMexCSS.css" text="Nuevo" textAlignment="RIGHT">
+               <graphic>
+                  <ImageView fx:id="imgNuevo" fitHeight="25.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/Nuevo.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets right="2.0" top="2.0" />
+               </opaqueInsets>
+            </Button>
+            <Button fx:id="btnEliminar" mnemonicParsing="false" onAction="#eliminar" prefWidth="122.0" styleClass="button1" stylesheets="@../NetBeansProjects/ClinaMex_2018151/src/org/stevenlopez/resource/ClinaMexCSS.css" text="Eliminar">
+               <graphic>
+                  <ImageView fx:id="imgEliminar" fitHeight="25.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/Eliminar2.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <opaqueInsets>
+                  <Insets right="2.0" top="2.0" />
+               </opaqueInsets>
+            </Button>
+            <Button fx:id="btnEditar" mnemonicParsing="false" onAction="#editar" prefWidth="122.0" styleClass="button1" stylesheets="@../NetBeansProjects/ClinaMex_2018151/src/org/stevenlopez/resource/ClinaMexCSS.css" text="Editar">
+               <graphic>
+                  <ImageView fx:id="imgEditar" fitHeight="25.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/Editar2.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <opaqueInsets>
+                  <Insets bottom="2.0" top="2.0" />
+               </opaqueInsets>
+            </Button>
+            <Button fx:id="btnReporte" mnemonicParsing="false" onAction="#reporte" prefWidth="122.0" styleClass="button1" stylesheets="@../NetBeansProjects/ClinaMex_2018151/src/org/stevenlopez/resource/ClinaMexCSS.css" text="Reporte">
+               <graphic>
+                  <ImageView fx:id="imgReporte" fitHeight="25.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/Reporte.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <opaqueInsets>
+                  <Insets right="2.0" top="2.0" />
+               </opaqueInsets>
+            </Button>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </VBox>
+      <ImageView fitHeight="124.0" fitWidth="124.0" layoutX="19.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/Citas.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="60.0" fitWidth="32.0" layoutX="5.0" layoutY="2.0" onMouseClicked="#menuPrincipal" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/Salir.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

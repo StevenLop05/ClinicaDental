@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.CubicCurve?>
+<?import javafx.scene.shape.Ellipse?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="361.0" prefWidth="597.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.stevenlopez.controller.ProgramadorController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f2cf63" height="127.0" layoutX="406.0" layoutY="48.0" stroke="TRANSPARENT" strokeType="INSIDE" width="117.0" />
+      <ImageView fitHeight="380.0" fitWidth="611.0" opacity="0.34" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/fondo.jpeg" />
+         </image>
+      </ImageView>
+      <CubicCurve controlX1="-50.0" controlX2="50.0" controlY1="-100.0" controlY2="100.0" endX="150.0" fill="#05f2c7" layoutX="444.0" startX="-150.0" stroke="BLACK" />
+      <Circle fill="#f0cc62e8" layoutX="-15.0" layoutY="-19.0" radius="105.0" stroke="BLACK" strokeType="INSIDE" />
+      <Ellipse fill="#05c7f2" layoutX="649.0" layoutY="231.0" radiusX="100.0" radiusY="80.0" stroke="BLACK" strokeType="INSIDE" />
+      <CubicCurve controlX1="-50.0" controlX2="33.0" controlY1="-150.0" controlY2="100.5" endX="150.0" fill="#05f2c7" layoutX="150.0" layoutY="361.0" startX="-150.0" stroke="BLACK" />
+      <CubicCurve controlX1="-50.0" controlX2="50.0" controlY1="-100.0" controlY2="100.0" endX="150.0" fill="#f2b950" layoutX="450.0" layoutY="361.0" startX="-170.0" stroke="BLACK" />
+      <CubicCurve controlX1="-52.0" controlX2="100.0" controlY1="-92.5" controlY2="100.0" endX="150.0" fill="#07c9f0e1" layoutX="89.0" opacity="0.95" startX="-170.0" stroke="BLACK" />
+      <Label layoutX="66.0" layoutY="53.0" text="PROGRAMADOR">
+         <font>
+            <Font name="Agency FB" size="27.0" />
+         </font>
+      </Label>
+      <Label layoutX="115.0" layoutY="181.0" text="Steven Alejadro López del Cid">
+         <font>
+            <Font name="Century" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="134.0" layoutY="254.0" prefHeight="23.0" prefWidth="79.0" text="2018151">
+         <font>
+            <Font name="Century" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="335.0" layoutY="254.0" text="IN5AM">
+         <font>
+            <Font name="Century" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="90.0" layoutY="232.0" text="Carnet:">
+         <font>
+            <Font name="Elephant" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="76.0" layoutY="158.0" text="Nombre:">
+         <font>
+            <Font name="Elephant" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="241.0" layoutY="232.0" text="Codigo Técnico:">
+         <font>
+            <Font name="Elephant" size="18.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="127.0" fitWidth="117.0" layoutX="405.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+         <image>
+            <Image url="@../image/Autor.jpeg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="33.0" fitWidth="40.0" layoutX="549.0" layoutY="315.0" onMouseClicked="#menuPrincipal" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/Salir.png" />
+         </image>
+      </ImageView>
+   </children>
+   <cursor>
+      <Cursor fx:constant="NONE" />
+   </cursor>
+</AnchorPane>
